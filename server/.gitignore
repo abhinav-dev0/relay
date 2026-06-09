@@ -9,7 +9,6 @@ target/
 application-local.yml
 application-local.properties
 
-application.properties
 application.yml
 
 
