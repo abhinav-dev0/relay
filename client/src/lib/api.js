@@ -2,7 +2,11 @@ import axios from 'axios';
 import { useAuthStore } from '../stores/authStore';
 
 const api = axios.create({
-	baseURL: '/api',
+	baseURL: import.meta.env.VITE_BASE_URL
+		? (import.meta.env.VITE_BASE_URL.endsWith('/api')
+			? import.meta.env.VITE_BASE_URL
+			: `${import.meta.env.VITE_BASE_URL}/api`)
+		: '/api',
 });
 
 api.interceptors.request.use(
